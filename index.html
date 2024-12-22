@@ -1,0 +1,97 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Craft | Graph Visualization & Analysis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.28.1/cytoscape.min.js"
+        integrity="sha512-RcuA+PEnJcg1caTn53YLhZ3bYVFXphzcPL1BjBoAwFiA3bErav+AndZz1xrqpAtv/8Waep2X+9zn8KWpwacUSA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Graph Craft | Visualization & Analysis</a>
+            <a href="https://github.com/SharafatKarim/GraphCraft"><button class="btn btn-outline-success" type="submit">GitHub repo</button></a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Input Data</h2>
+        <div class="mb-3">
+            <label for="adjMatInp" class="form-label">Enter your input (adjacency matrix)</label>
+            <textarea class="form-control" id="adjMatInp" rows="4"
+                placeholder="An example 🎨&#10;2 3 1&#10;6 5 3&#10;2 1 9">
+            </textarea>
+        </div>
+        <button class="btn btn-success" id="myButton">Analyze data</button>
+        <button class="btn btn-danger" id="clearGraph">Clear graph</button>
+        <button class="btn btn-primary" onclick="location.reload()">Refresh</button>
+    </div>
+
+    <div class="cy-container">
+        <div class="cy-class" id="cy"></div>
+    </div>
+
+    <div class="container text-center">
+        <div class="row align-items-end">
+            <div class="col" id="parentAdjMatTable">
+                <!-- --------- table 01 --------- -->
+                <h2 id="adjText" style="visibility: hidden;">Adjacency Matrix</h2>
+                <div id="adjMatTable"></div>
+            </div>
+            <div class="col" id="linkedTab">
+                <!-- --------- table 02 --------- -->
+                <h2 id="lnkText" style="visibility: hidden;">Linked Representation</h2>
+                <div id="linkedRepTable"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- -------------- dropdown menu ------------------ -->
+    <div class="container text-center">
+        <div class="row">
+            <div class="col" id="parentAdjMatTable">
+                <!-- ------------Warshall's Algorithm -->
+                <h2 id="warText" style="visibility: hidden;">Warshall's Algorithm</h2>
+                <div id="warMatTable"></div>
+            </div>
+            <div class="col" id="linkedTab">
+                <!-- ------------Path Matrix -->
+                <h2 id="pathText" style="visibility: hidden;">Path Matrix</h2>
+                <div id="pathMatTable"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-sm text-center">
+        <!-- ------------warshall's Algorithm -->
+        <h2 id="warText" style="visibility: hidden;">Warshall's Algorithm</h2>
+        <div id="warMatTable"></div>
+    </div>
+
+    <!-- ___              _                
+    /'___)            ( )_              
+   | (__   _      _   | ,_)   __   _ __ 
+   | ,__)/'_`\  /'_`\ | |   /'__`\( '__)
+   | |  ( (_) )( (_) )| |_ (  ___/| |   
+   (_)  `\___/'`\___/'`\__)`\____)(_)   
+                                         -->
+
+    <footer class="text-center">
+        <div class="text-center mt-4">
+            <p class="mb-0">&copy; 2024 <a href="https://github.com/SharafatKarim/">Sharafat Karim</a> | <a
+                    href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></p>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>
